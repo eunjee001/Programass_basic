@@ -18,9 +18,11 @@ class no_42 {
         answer[1] = lcmResult
         return answer
     }
+    // 최대공약수
     fun gcd (n: Int, m:Int):Int{
         return if (m == 0) n else gcd(m, n%m)
     }
+    // 최소공배수
     fun lcm (n:Int, m:Int):Int{
         return (n * m) / gcd(n,m)
     }
