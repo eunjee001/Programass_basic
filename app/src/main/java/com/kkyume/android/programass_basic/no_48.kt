@@ -18,23 +18,15 @@ package com.kkyume.android.programass_basic
 
  */
 class no_48 {
-    fun solution(n: Int): Int {
-        var answer = 0
-        var newNum =0
-        if (i == 0 ){
-            newNum = 0
-        }else if (i == 1){
-            newNum = 1
-        }
-        for(i in 0..n){
-            if (i == 0 ){
-                newNum = 0
-            }else if (i == 1){
-                newNum = 1
-            }
-            answer += newNum
+    fun solution(n: Int): Int = search(arrayListOf<Int>(0, 1), n, 2)
 
-        }
-            return answer
+
+    fun search( f : ArrayList<Int>, target : Int, now : Int) : Int = if( now != target) {
+        f.add((f[now-2]%1234567+f[now-1]%1234567)%1234567)
+        search(f, target, now+1)
+    }
+    else{
+        f.add((f[now-2]%1234567+f[now-1]%1234567)%1234567)
+        f.last()
     }
 }
